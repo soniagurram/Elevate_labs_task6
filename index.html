@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Acme Solutions — Professional Web Design</title>
+  <meta name="description" content="Acme Solutions — modern, responsive web solutions for small businesses.">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#">
+        <img src="assets/logo.svg" alt="Acme logo" class="logo">
+        <span class="brand-name">Acme Solutions</span>
+      </a>
+      <nav class="main-nav">
+        <a href="#services">Services</a>
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a class="cta" href="#contact">Contact</a>
+      </nav>
+      <button class="nav-toggle" aria-expanded="false" aria-label="Toggle navigation">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <h1>Design. Build. Grow.</h1>
+          <p>We create modern, accessible websites that help businesses scale. Fast turnarounds, clear pricing, and a friendly team.</p>
+          <p class="hero-ctas">
+            <a class="btn btn-primary" href="#contact">Get Started</a>
+            <a class="btn btn-outline" href="#work">See our work</a>
+          </p>
+        </div>
+        <div class="hero-art">
+          <!-- simple decorative illustration -->
+          <svg viewBox="0 0 600 400" class="hero-svg" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
+            <defs>
+              <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#6C63FF"/>
+                <stop offset="1" stop-color="#00C9A7"/>
+              </linearGradient>
+            </defs>
+            <rect rx="20" width="100%" height="100%" fill="url(#g)" opacity="0.12"/>
+            <circle cx="180" cy="120" r="60" fill="#fff" opacity="0.08"/>
+            <circle cx="420" cy="260" r="80" fill="#fff" opacity="0.06"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="section services">
+      <div class="container">
+        <h2 class="section-title">Our Services</h2>
+        <p class="section-sub">Design-forward, performance-minded, and built to convert.</p>
+        <div class="grid cards">
+          <article class="card">
+            <h3>Web Design</h3>
+            <p>Beautiful, accessible UI that reflects your brand and converts visitors to customers.</p>
+          </article>
+          <article class="card">
+            <h3>Development</h3>
+            <p>Fast, maintainable front-end and CMS integrations using modern tooling.</p>
+          </article>
+          <article class="card">
+            <h3>Optimization</h3>
+            <p>Performance, SEO, and analytics to keep your site fast and visible.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="work" class="section work">
+      <div class="container">
+        <h2 class="section-title">Selected Work</h2>
+        <div class="grid showcase">
+          <div class="showcase-item">
+            <div class="thumb" aria-hidden="true">Project A</div>
+            <h4>Retail Site Redesign</h4>
+            <p>Increased conversions by 38% through UX improvements and faster checkout flow.</p>
+          </div>
+          <div class="showcase-item">
+            <div class="thumb" aria-hidden="true">Project B</div>
+            <h4>SaaS Landing</h4>
+            <p>Polished landing page and onboarding funnel for a fintech startup.</p>
+          </div>
+          <div class="showcase-item">
+            <div class="thumb" aria-hidden="true">Project C</div>
+            <h4>Marketing Microsite</h4>
+            <p>Lead-focused microsite with A/B testing and analytics setup.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section about">
+      <div class="container split">
+        <div>
+          <h2 class="section-title">About Us</h2>
+          <p>We're a small team of designers and builders who love working with growing businesses. We value clarity, performance, and pragmatic design.</p>
+          <ul class="key-points">
+            <li>Small, focused teams</li>
+            <li>Transparent pricing</li>
+            <li>Fast delivery cycles</li>
+          </ul>
+        </div>
+        <aside class="card">
+          <h3>Who we work with</h3>
+          <p>Startups, local businesses, and product teams who need clear design and reliable execution.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact">
+      <div class="container">
+        <h2 class="section-title">Contact</h2>
+        <p>Ready to start your project? Drop us a line — we typically reply within 1 business day.</p>
+        <form class="contact-form" action="#" method="post" onsubmit="return false;">
+          <div class="form-grid">
+            <input type="text" name="name" placeholder="Your name" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="text" name="company" placeholder="Company (optional)">
+            <textarea name="message" rows="5" placeholder="Tell us about your project" required></textarea>
+          </div>
+          <p><button class="btn btn-primary" type="submit">Send Message</button></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Acme Solutions — All rights reserved.</p>
+      <nav class="footer-nav">
+        <a href="#privacy">Privacy</a>
+        <a href="#terms">Terms</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    // small script for nav toggle and year
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const btn = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('.main-nav');
+    btn.addEventListener('click', () => {
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!expanded));
+      nav.classList.toggle('open');
+    });
+  </script>
+</body>
+</html>

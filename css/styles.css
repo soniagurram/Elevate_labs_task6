@@ -1,0 +1,94 @@
+/* Professional, modern CSS for static website */
+:root{
+  --bg:#0f1724;
+  --card:#0b1220;
+  --muted:#9aa4b2;
+  --accent:#6C63FF;
+  --accent-2:#00C9A7;
+  --text:#e6eef6;
+  --radius:12px;
+  --container:1100px;
+}
+
+/* Reset-ish */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color:var(--text);
+  background:linear-gradient(180deg,#071022 0%,#071326 60%);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.6;
+}
+.container{max-width:var(--container);margin:0 auto;padding:0 20px}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--text)}
+.logo{width:42px;height:42px}
+.brand-name{font-weight:700;letter-spacing:0.2px}
+
+.main-nav{display:flex;gap:18px;align-items:center}
+.main-nav a{color:var(--text);text-decoration:none;padding:8px 10px;border-radius:8px;font-weight:600}
+.main-nav a:hover{background:rgba(255,255,255,0.03)}
+.main-nav .cta{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:white;padding:8px 14px}
+
+.nav-toggle{display:none;background:none;border:0;color:var(--text);font-size:22px}
+
+.site-header{backdrop-filter:blur(6px);position:sticky;top:0;z-index:40;background:linear-gradient(180deg,rgba(7,13,26,0.6),rgba(7,13,26,0.35));border-bottom:1px solid rgba(255,255,255,0.02)}
+
+/* Hero */
+.hero{padding:64px 0}
+.hero-inner{display:flex;gap:40px;align-items:center}
+.hero-copy{flex:1}
+.hero h1{font-size:38px;margin:0 0 12px}
+.hero p{color:var(--muted);max-width:58ch}
+.hero-ctas{margin-top:18px}
+.btn{display:inline-block;text-decoration:none;border:0;padding:10px 16px;border-radius:10px;font-weight:700}
+.btn-primary{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#071326}
+.btn-outline{border:1px solid rgba(255,255,255,0.06);color:var(--text);background:transparent}
+
+.hero-art{width:360px;flex:0 0 360px}
+.hero-svg{width:100%;height:auto;border-radius:12px}
+
+/* Sections */
+.section{padding:48px 0}
+.section-title{font-size:22px;margin:0 0 8px}
+.section-sub{color:var(--muted);margin-bottom:18px}
+
+.grid{display:grid;gap:20px}
+.cards{grid-template-columns:repeat(3,1fr)}
+.card{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.015));padding:20px;border-radius:12px;border:1px solid rgba(255,255,255,0.02)}
+.card h3{margin-top:0}
+
+.showcase{grid-template-columns:repeat(3,1fr)}
+.showcase-item .thumb{height:140px;border-radius:10px;background:linear-gradient(90deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;color:#071326;font-weight:800}
+
+.split{display:flex;gap:24px;align-items:flex-start}
+.split > *{flex:1}
+.key-points{padding-left:18px;color:var(--muted)}
+
+.contact-form{margin-top:18px}
+.form-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.form-grid input,.form-grid textarea{padding:12px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--text)}
+.form-grid textarea{grid-column:1/-1}
+
+.site-footer{border-top:1px solid rgba(255,255,255,0.02);padding:20px 0;margin-top:40px}
+.footer-inner{display:flex;justify-content:space-between;align-items:center}
+.footer-nav a{color:var(--muted);text-decoration:none;margin-left:12px}
+
+/* Responsive */
+@media (max-width:900px){
+  .hero-inner{flex-direction:column-reverse}
+  .hero-art{width:100%;flex-basis:auto}
+  .cards,.showcase{grid-template-columns:repeat(1,1fr)}
+  .split{flex-direction:column}
+}
+@media (max-width:720px){
+  .nav-toggle{display:block}
+  .main-nav{position:fixed;top:72px;right:20px;display:flex;flex-direction:column;background:rgba(4,9,16,0.96);padding:12px;border-radius:10px;gap:6px;transform-origin:top right;opacity:0;pointer-events:none;transition:opacity .18s ease}
+  .main-nav.open{opacity:1;pointer-events:auto}
+}
+
+/* Utility */
+.text-muted{color:var(--muted)}
