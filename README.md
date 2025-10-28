@@ -14,12 +14,12 @@ Open `index.html` directly in a browser, or serve it with a simple HTTP server (
 PowerShell (from the `static-website` folder):
 
 ```powershell
-python -m http.server 8000
+python -m http.server 8004
 ```
 
 Then open http://localhost:8000 in your browser.
 
-Notes
-
-- The contact form is non-functional (demo only).
-- Replace placeholder images and copy with your brand assets.
+## Upload it to Github
+1.Go to repo → Settings → Pages → enable GitHub Pages.
+4.Select main branch and root folder.
+5.Access live website from the link GitHub gives.
